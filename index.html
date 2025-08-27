@@ -6,7 +6,25 @@
     <title>My Math Blog</title>
     <link rel="stylesheet" href="style.css">
     <!-- MathML polyfill for Chrome/Edge -->
-    <script src="https://fred-wang.github.io/mathml.css/mspace.js"></script>
+<!-- Load the full MathML polyfill for Chrome/Edge -->
+<script>
+  window.MathJax = {
+    // Tell MathJax we are using Native MathML, and to polyfill for browsers that don't support it.
+    MathML: {
+      useMathMLspacing: true // Use MathML spacing rules
+    },
+    // When rendering is complete, remove the "MathJax_Message" loader element it creates.
+    startup: {
+      pageReady: () => {
+        return MathJax.startup.defaultPageReady().then(() => {
+          const messageElement = document.getElementById('MathJax_Message');
+          if (messageElement) messageElement.style.display = 'none';
+        });
+      }
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
 </head>
 <body>
     <header>
