@@ -1,59 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Math Blog</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- MathML polyfill for Chrome/Edge -->
-<!-- Load the full MathML polyfill for Chrome/Edge -->
-<script>
-  window.MathJax = {
-    // Tell MathJax we are using Native MathML, and to polyfill for browsers that don't support it.
-    MathML: {
-      useMathMLspacing: true // Use MathML spacing rules
-    },
-    // When rendering is complete, remove the "MathJax_Message" loader element it creates.
-    startup: {
-      pageReady: () => {
-        return MathJax.startup.defaultPageReady().then(() => {
-          const messageElement = document.getElementById('MathJax_Message');
-          if (messageElement) messageElement.style.display = 'none';
-        });
-      }
-    }
-  };
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Exploring Mathematics</h1>
-        <p>A blog built with HTML and MathML</p>
-    </header>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My Math Blog</title>
+		<link rel="stylesheet" href="style.css">
+		<!-- MathML polyfill for Chrome/Edge -->
+		<!-- Load the full MathML polyfill for Chrome/Edge -->
+		<script>
+			window.MathJax = {
+							// Tell MathJax we are using Native MathML, and to polyfill for browsers that don't support it.
+							MathML: {
+											useMathMLspacing: true // Use MathML spacing rules
+										},
+							// When rendering is complete, remove the "MathJax_Message" loader element it creates.
+							startup: {
+											pageReady: () => {
+															return MathJax.startup.defaultPageReady().then(() => {
+																			const messageElement = document.getElementById('MathJax_Message');
+																			if (messageElement) messageElement.style.display = 'none';
+																		});
+														}
+										}
+						};
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Exploring Mathematics</h1>
+			<p>A blog built with HTML and MathML</p>
+		</header>
 
-    <main>
-        <!-- My blog posts will go here -->
-        <article>
-            <h2>On the non-existence of Russell's set</h2>
-            <p>Posted on <time datetime="2025-08-28">August 28, 2025</time></p>
-	    <p>In this post we prove that <math display="block"><mo>&not;</mo><mo>&exist;</mo><mi>&#x211B;</mi><mo>&forall;</mo><mi>x</mi><mo>&nbsp;</mo><mi>x</mi><mo>&in;</mo><mi>&#x211B;</mi><mo>&iff;</mo><mi>x</mi><mo>&notin;</mo><mi>x</mi><mo>.</mo></math></p>
-	    <p>Indeed, <math display="block"><mo>&forall;</mo><mi>&#x211B;</mi><mo>&exist;</mo><mi>x</mi><mo>&nbsp;</mo><mi>x</mi><mo>&in;</mo><mi>&#x211B;</mi><mo>&iff;</mo><mi>x</mi><mo>&in;</mo><mi>x</mo><mo>,</mo></math>
-	    because
-	    <math display="block"><mo>&forall;</mo><mi>&#x211B;</mi><mo>&nbsp</mo><mi>&#x211B;</mi><mo>&in;</mo><mi>&#x211B;</mi><mo>&iff;</mo><mi>&#x211B;</mi><mo>&in;</mo><mi>&#x211B;</mi><mo>.</mo><mo>&#x220E;</mo></math></p>
-        </article>
-        <article>
-            <h2>A Divisibility Criterion with 41</h2>
-            <p>Posted on <time datetime="2025-08-27">August 27, 2025</time></p>
-	    <p>In this post we write natural numbers in decimal.</p>
-	    <p>Let <math><mi>n</mi></math> be a 100-digit natural number.</p>
-	    <p>Let us form 20 of 5-digit numbers with the digits of <math><mi>n</mi></math> in the order in that they appear in the decimal representation of <math><mi>n</mi></math> (left to right).</p>
-	    <p>Then <math><mi>n</mi></math> is a multiple of 41 if and only if the sum of the 20 numbers mentioned above is a multiple of 41.</p>
-        </article>
-    </main>
+		<main>
+			<!-- My blog posts will go here -->
+			<article>
+				<h2>Approximation of total natural functions through primitive recursive functions on finite sets</h2>
+				<p>Posted on <time datetime="2025-08-28">August 28, 2025</time></p>
+				<p>In this post we state that if
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<mi>f</mi>
+				<mo>&#x3A;</mo>
+				<mi>&#x2115;</mi>
+				<mo>&#x2192;</mo>
+				<mi>&#x2115;</mi>
+				</math>
+				is a total function, and 
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<mi>A</mi>
+				<mo>&#x2282;</mo>
+				<mi>&#x2115;</mi>
+				</math>
+				is a finite set, then
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<mo>&exist;</mo>
+				<mi>g</mi>
+				<mo>&#x3A;</mo>
+				<mi>&#x2115;</mi>
+				<mo>&#x2192;</mo>
+				<mi>&#x2115;</mi>
+				</math>
+				a primitive recursive function
+				such that:
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<msub>
+				<mrow>
+				<mi>f</mi>
+				<mo>&#x2223;</mo>
+				</mrow>
+				<mi>A</mi>
+				</msub>
+				<mo>&#x3D;</mo>
+				<msub>
+				<mrow>
+				<mi>g</mi>
+				<mo>&#x2223;</mo>
+				</mrow>
+				<mi>A</mi>
+				</msub><mo>.</mo>
+				<mo>&#x220E;</mo>
+				</math>
+				</p>
+			</article>
+			<article>
+				<h2>On the non-existence of Russell's set</h2>
+				<p>Posted on <time datetime="2025-08-28">August 28, 2025</time></p>
+				<p>In this post we prove that <math display="block"><mo>&not;</mo><mo>&exist;</mo><mi>&#x211B;</mi><mo>&forall;</mo><mi>x</mi><mo>&nbsp;</mo><mi>x</mi><mo>&in;</mo><mi>&#x211B;</mi><mo>&iff;</mo><mi>x</mi><mo>&notin;</mo><mi>x</mi><mo>.</mo></math></p>
+				<p>Indeed, <math display="block"><mo>&forall;</mo><mi>&#x211B;</mi><mo>&exist;</mo><mi>x</mi><mo>&nbsp;</mo><mi>x</mi><mo>&in;</mo><mi>&#x211B;</mi><mo>&iff;</mo><mi>x</mi><mo>&in;</mo><mi>x</mo><mo>,</mo></math>
+				because
+				<math display="block"><mo>&forall;</mo><mi>&#x211B;</mi><mo>&nbsp</mo><mi>&#x211B;</mi><mo>&in;</mo><mi>&#x211B;</mi><mo>&iff;</mo><mi>&#x211B;</mi><mo>&in;</mo><mi>&#x211B;</mi><mo>.</mo><mo>&#x220E;</mo></math></p>
+			</article>
+			<article>
+				<h2>A Divisibility Criterion with 41</h2>
+				<p>Posted on <time datetime="2025-08-27">August 27, 2025</time></p>
+				<p>In this post we write natural numbers in decimal.</p>
+				<p>Let <math><mi>n</mi></math> be a 100-digit natural number.</p>
+				<p>Let us form 20 of 5-digit numbers with the digits of <math><mi>n</mi></math> in the order in that they appear in the decimal representation of <math><mi>n</mi></math> (left to right).</p>
+				<p>Then <math><mi>n</mi></math> is a multiple of 41 if and only if the sum of the 20 numbers mentioned above is a multiple of 41.</p>
+			</article>
+		</main>
 
-    <footer>
-        <p>© 2025 Antoniu-Daniel Zăpîrțan</p>
-    </footer>
-</body>
+		<footer>
+			<p>© 2025 Antoniu-Daniel Zăpîrțan</p>
+		</footer>
+	</body>
 </html>
