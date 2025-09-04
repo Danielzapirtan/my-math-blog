@@ -34,7 +34,47 @@
 
 		<main>
 			<!-- My blog posts will go here -->
-			<article>
+    <article>
+        <h2>A Modification of Naive Set Theory</h2>
+        <p>Posted on <time datetime="2025-09-04">September 4, 2025</time></p>
+        
+        <p>We frame this in first-order predicate logic with a binary relation "∈", as in Naive Set Theory (NST).</p>
+        
+        <div class="math-container">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mtext>Let</mtext>
+                <mi>phy</mi>
+                <mtext>&nbsp;be a unary predicate and&nbsp;</mtext>
+                <mi>p</mi>
+                <mtext>&nbsp;the proposition:</mtext>
+                <mrow>
+                    <mo>∃</mo>
+                    <mi>y</mi>
+                    <mo>∀</mo>
+                    <mi>x</mi>
+                    <mrow>
+                        <mo>(</mo>
+                        <mi>x</mi>
+                        <mo>∈</mo>
+                        <mi>y</mi>
+                        <mo>⇔</mo>
+                        <mi>phy</mi>
+                        <mo>(</mo>
+                        <mi>x</mi>
+                        <mo>)</mo>
+                        <mo>)</mo>
+                    </mrow>
+                </mrow>
+            </math>
+        </div>
+        
+        <p>Then:</p>
+        <ul>
+            <li>If we know that <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi></math> is true, we can form the set <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>M</mi><mo>=</mo><mo>{</mo><mi>x</mi><mo>|</mo><mi>phy</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>}</mo></math>.</li>
+            <li>If we know that <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi></math> is false, we cannot form the set <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>M</mi></math>.</li>
+            <li>Otherwise, we say that the existence of set <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>M</mi></math> is a hypothesis.</li>
+        </ul>
+    </article>			<article>
 				<h2>Approximation of total natural functions through primitive recursive functions on finite sets</h2>
 				<p>Posted on <time datetime="2025-08-28">August 28, 2025</time></p>
 				<p>In this post we state that if
