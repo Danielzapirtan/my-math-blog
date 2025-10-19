@@ -4,27 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Math Blog</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- MathML polyfill for Chrome/Edge -->
+  <style>
+    body {
+      font-family: Georgia, serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    header {
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 2px solid #333;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      margin: 0;
+      color: #333;
+    }
+    header p {
+      color: #666;
+      font-style: italic;
+    }
+    article {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    article h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+    time {
+      color: #7f8c8d;
+      font-size: 0.9em;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 30px;
+    }
+  </style>
+  <!-- MathJax for LaTeX rendering -->
   <script>
-    window.MathJax = {
-      MathML: { useMathMLspacing: true },
-      startup: {
-        pageReady: () => {
-          return MathJax.startup.defaultPageReady().then(() => {
-            const messageElement = document.getElementById('MathJax_Message');
-            if (messageElement) messageElement.style.display = 'none';
-          });
-        }
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
       }
     };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <header>
     <h1>Exploring Mathematics</h1>
-    <p>A blog built with HTML and MathML</p>
+    <p>A blog built with HTML and LaTeX</p>
   </header>
 
   <main>
@@ -37,94 +77,54 @@
       So the barber shaves himself. No contradiction. It is ok for the barber to shave himself.
       </p>
     </article>
+    
     <article>
       <h2>A Modification of Naive Set Theory</h2>
       <p>Posted on <time datetime="2025-09-04">September 4, 2025</time></p>
 
       <p>We frame this in first-order predicate logic with a binary relation "∈", as in Naive Set Theory (NST).</p>
 
-      Let
-      <math><mi>φ</mi></math>
-      be a unary predicate and
-      <math><mi>p</mi></math>
-      the proposition:
-      <math display="block">
-        <mo>∃</mo>
-        <mi>y</mi>
-        <mo>∀</mo>
-        <mi>x</mi>
-        <mrow>
-          <mo>(</mo>
-          <mi>x</mi>
-          <mo>∈</mo>
-          <mi>y</mi>
-          <mo>⇔</mo>
-          <mi>φ</mi>
-          <mo>(</mo><mi>x</mi><mo>)</mo>
-          <mo>)</mo>
-        </mrow>
-      </math>
+      <p>Let $\varphi$ be a unary predicate and $p$ the proposition:</p>
+      
+      $$\exists y \forall x \left( x \in y \Leftrightarrow \varphi(x) \right)$$
 
       <p>Then:</p>
       <ul>
-        <li>If we know that <math><mi>p</mi></math> is true, we can form the set <math><mi>M</mi><mo>=</mo><mo>{</mo><mi>x</mi><mo>|</mo><mi>φ</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>}</mo></math>.</li>
-        <li>If we know that <math><mi>p</mi></math> is false, we cannot form the set <math><mi>M</mi></math>.</li>
-        <li>Otherwise, we say that the existence of set <math><mi>M</mi></math> is a hypothesis and we can investigate its consequences in theory.</li>
+        <li>If we know that $p$ is true, we can form the set $M = \{x | \varphi(x)\}$.</li>
+        <li>If we know that $p$ is false, we cannot form the set $M$.</li>
+        <li>Otherwise, we say that the existence of set $M$ is a hypothesis and we can investigate its consequences in theory.</li>
       </ul>
-      Note: <math><mi>p</mi></math> and <math><mi>M</mi></math> depend on <math><mi>φ</mi></math>.
+      <p>Note: $p$ and $M$ depend on $\varphi$.</p>
     </article>
+    
     <article>
       <h2>Approximation of Total Natural Functions through Primitive Recursive Functions on Finite Sets</h2>
       <p>Posted on <time datetime="2025-08-28">August 28, 2025</time></p>
-      <p>In this post we state that if
-        <math>
-          <mi>f</mi><mo>:</mo><mi>ℕ</mi><mo>→</mo><mi>ℕ</mi>
-        </math>
-        is a total function, and
-        <math><mi>A</mi><mo>⊆</mo><mi>ℕ</mi></math>
-        is a finite set, then
-        <math>
-          <mo>∃</mo><mi>g</mi><mo>:</mo><mi>ℕ</mi><mo>→</mo><mi>ℕ</mi>
-        </math>
-        a primitive recursive function such that:
-        <math>
-          <msub><mrow><mi>f</mi><mo>|</mo></mrow><mi>A</mi></msub>
-          <mo>=</mo>
-          <msub><mrow><mi>g</mi><mo>|</mo></mrow><mi>A</mi></msub><mo>.</mo>
-          <mo>∎</mo>
-        </math>
+      <p>In this post we state that if $f: \mathbb{N} \to \mathbb{N}$ is a total function, and $A \subseteq \mathbb{N}$ is a finite set, then $\exists g: \mathbb{N} \to \mathbb{N}$ a primitive recursive function such that:
+        $$f|_A = g|_A. \quad \square$$
       </p>
     </article>
 
     <article>
       <h2>On the Non-Existence of Russell's Set</h2>
       <p>Posted on <time datetime="2025-08-28">August 28, 2025</time></p>
-      <p>In this post we prove that
-        <math display="block">
-          <mo>¬</mo><mo>∃</mo><mi>R</mi><mo>∀</mo><mi>x</mi><mo>&#xA0;</mo>
-          <mi>x</mi><mo>∈</mo><mi>R</mi><mo>⇔</mo><mi>x</mi><mo>∉</mo><mi>x</mi><mo>.</mo>
-        </math>
-      </p>
-      <p>Indeed,
-        <math display="block">
-          <mo>∀</mo><mi>R</mi><mo>∃</mo><mi>x</mi><mo>&#xA0;</mo>
-          <mi>x</mi><mo>∈</mo><mi>R</mi><mo>⇔</mo><mi>x</mi><mo>∈</mo><mi>x</mi><mo>,</mo>
-        </math>
-        because
-        <math display="block">
-          <mo>∀</mo><mi>R</mi><mo>&#xA0;</mo>
-          <mi>R</mi><mo>∈</mo><mi>R</mi><mo>⇔</mo><mi>R</mi><mo>∈</mo><mi>R</mi><mo>.</mo><mo>∎</mo>
-        </math>
-      </p>
+      <p>In this post we prove that</p>
+      $$\neg \exists R \forall x \; x \in R \Leftrightarrow x \notin x.$$
+      
+      <p>Indeed,</p>
+      $$\forall R \exists x \; x \in R \Leftrightarrow x \in x,$$
+      
+      <p>because</p>
+      $$\forall R \; R \in R \Leftrightarrow R \in R. \quad \square$$
     </article>
 
     <article>
       <h2>A Divisibility Criterion with 41</h2>
       <p>Posted on <time datetime="2025-08-27">August 27, 2025</time></p>
       <p>In this post we write natural numbers in decimal.</p>
-      <p>Let <math><mi>n</mi></math> be a 100-digit natural number.</p>
-      <p>Let us form 20 of 5-digit numbers with the digits of <math><mi>n</mi></math> in the order in that they appear in the decimal representation of <math><mi>n</mi></math> (left to right).</p>
-      <p>Then <math><mi>n</mi></math> is a multiple of 41 if and only if the sum of the 20 numbers mentioned above is a multiple of 41. (This works because <math><msup><mn>10</mn><mn>5</mn></msup><mo>≡</mo><mn>1</mn> <mo>(</mo><mtext>mod</mtext> <mn>41</mn><mo>)</mo></math>.)</p>
+      <p>Let $n$ be a 100-digit natural number.</p>
+      <p>Let us form 20 of 5-digit numbers with the digits of $n$ in the order in that they appear in the decimal representation of $n$ (left to right).</p>
+      <p>Then $n$ is a multiple of 41 if and only if the sum of the 20 numbers mentioned above is a multiple of 41. (This works because $10^5 \equiv 1 \pmod{41}$.)</p>
     </article>
   </main>
 
